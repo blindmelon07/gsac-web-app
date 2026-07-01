@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+@import 'tailwindcss';
+
+@source './components/**/*.{js,jsx}';
+@source './contexts/**/*.jsx';
+@source './router.jsx';
+@source './App.jsx';
+
+@theme {
+  --font-family-semib: 'LotaSemibold', sans-serif;
+  --font-family-normal: 'LotaRegular', sans-serif;
+  --font-family-headline: 'Ivy', serif;
+
+  --color-dark-text: #4D5875;
+  --color-gray-text: #94979C;
+  --color-steel: #8B9DBB;
+  --color-light-steel: #B7C6DE;
+  --color-dark-blue: #23418b;
+  --color-blue: #0075FF;
+  --color-powder: #E4F1FA;
+  --color-baby: #CEDFEB;
+
+  --animate-spin-slow: spin 3s linear infinite;
+
+  --shadow-3xl: -6px -2px 25px -2px rgba(110,137,158,0.35);
+  --shadow-light: 7px 12px 26px -1px rgba(201,212,224,0.39);
+  --shadow-2xl-custom: 0 25px 50px -12px rgb(125 151 183 / 45%);
+}
+
+@font-face {
+  font-family: 'LotaRegular';
+  src: url('./assets/lota-reg.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'LotaSemibold';
+  src: url('./assets/lota-semibold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Ivy';
+  src: url('./assets/ivy.woff2') format('woff2');
+}
+
+:root {
+  font-family: 'LotaRegular';
+}
+
+.font-caveat {
+  font-family: 'Caveat';
+}
+
+.font-jua {
+  font-family: 'Jua', sans-serif;
+}
+
+.slide1 {
+  background-image: url('./assets/cover.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.feature3 {
+  background-image: url('./assets/ft3.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.slide2 {
+  background-image: url('./assets/gcash.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.slide3 {
+  background-image: url('./assets/f3.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+span.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 600ms linear;
+  background-color: #F6D365;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.icon-shadow {
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+.glassed {
+  background: rgba(230, 224, 224, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 20px;
+}
+
+.carousel-wrapper {
+  height: 600px;
+}
+
+.carousel-wrapper .carousel {
+  height: 100%;
+}
+
+.carousel-image {
+  object-fit: cover;
+}
+
+.video-responsive {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 100%;
+  overflow: hidden;
+  max-width: 100%;
+  background: #000;
+  border-radius: 10px;
+}
+
+.video-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  overflow: hidden;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  z-index: 1;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;
+}
