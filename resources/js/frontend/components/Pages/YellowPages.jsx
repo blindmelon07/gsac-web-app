@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { FiSearch, FiPhone, FiMapPin, FiMail } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
+import { FiSearch, FiPhone, FiMapPin, FiMail, FiImage } from 'react-icons/fi';
 
 const directoryData = {
   agriculture: [
@@ -139,10 +140,11 @@ const YellowPages = () => {
   const listings = getListings(activeCategory);
   const filteredListings = listings.filter((item) => {
     const q = searchQuery.toLowerCase();
+    const desc = item.desc || item.description || '';
     return (
       item.name.toLowerCase().includes(q) ||
-      item.address.toLowerCase().includes(q) ||
-      item.desc.toLowerCase().includes(q)
+      (item.address || '').toLowerCase().includes(q) ||
+      desc.toLowerCase().includes(q)
     );
   });
 
@@ -203,27 +205,44 @@ const YellowPages = () => {
             </p>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredListings.map((item, idx) => (
-                <div
-                  key={idx}
-                  className="border border-powder rounded-xl p-6 transition-transform duration-300 transform hover:-translate-y-1 cursor-pointer"
-                >
-                  <p className="text-dark-blue font-semib text-lg">{item.name}</p>
-                  <p className="text-dark-text text-sm mt-2 mb-4">{item.desc}</p>
-                  <div className="flex items-start gap-2 text-sm text-dark-text mt-2">
-                    <FiMapPin className="text-blue mt-1 flex-shrink-0" />
-                    <span>{item.address}</span>
+              {filteredListings.map((item, idx) => {
+                const photos = item.photos || [];
+                const card = (
+                  <div className="border border-powder rounded-xl overflow-hidden transition-transform duration-300 transform hover:-translate-y-1 cursor-pointer h-full">
+                    <div className="h-40 bg-powder/40 flex items-center justify-center overflow-hidden">
+                      {photos.length > 0 ? (
+                        <img src={photos[0]} alt={item.name} className="w-full h-full object-cover" />
+                      ) : (
+                        <FiImage className="text-steel text-3xl" />
+                      )}
+                    </div>
+                    <div className="p-6">
+                      <p className="text-dark-blue font-semib text-lg">{item.name}</p>
+                      <p className="text-dark-text text-sm mt-2 mb-4">{item.desc || item.description}</p>
+                      <div className="flex items-start gap-2 text-sm text-dark-text mt-2">
+                        <FiMapPin className="text-blue mt-1 flex-shrink-0" />
+                        <span>{item.address}</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-sm text-dark-text mt-2">
+                        <FiPhone className="text-blue flex-shrink-0" />
+                        <span>{item.phone}</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-sm text-dark-text mt-2">
+                        <FiMail className="text-blue flex-shrink-0" />
+                        <span>{item.email}</span>
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-dark-text mt-2">
-                    <FiPhone className="text-blue flex-shrink-0" />
-                    <span>{item.phone}</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-dark-text mt-2">
-                    <FiMail className="text-blue flex-shrink-0" />
-                    <span>{item.email}</span>
-                  </div>
-                </div>
-              ))}
+                );
+
+                return item.id ? (
+                  <Link key={item.id} to={`/yellow-pages/${item.id}`}>
+                    {card}
+                  </Link>
+                ) : (
+                  <div key={idx}>{card}</div>
+                );
+              })}
             </div>
           )}
         </div>

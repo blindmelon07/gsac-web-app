@@ -22,6 +22,7 @@ import PaymentOptions from './components/Pages/PaymentOptions';
 import Labcoop from './components/Pages/Labcoop';
 import CustomerService from './components/Pages/CustomerService';
 import YellowPages from './components/Pages/YellowPages'
+import YellowPageDetail from './components/Pages/YellowPageDetail'
 
 const router = createBrowserRouter([
   {
@@ -115,7 +116,11 @@ const router = createBrowserRouter([
         path: '/yellow-pages',
         element: <YellowPages />
       },
-      
+      {
+        path: '/yellow-pages/:id',
+        element: <YellowPageDetail />
+      },
+
     ]
   },
 ]);

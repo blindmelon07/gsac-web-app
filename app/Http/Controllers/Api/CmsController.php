@@ -82,8 +82,15 @@ class CmsController extends Controller
     public function yellowPages()
     {
         return response()->json(
-            YellowPageListing::select('id', 'name', 'category', 'address', 'phone', 'email', 'description')
+            YellowPageListing::select('id', 'name', 'category', 'address', 'phone', 'email', 'description', 'photos')
                 ->orderBy('category')->orderBy('name')->get()
+        );
+    }
+
+    public function yellowPage(YellowPageListing $listing)
+    {
+        return response()->json(
+            $listing->only(['id', 'name', 'category', 'address', 'phone', 'email', 'description', 'photos'])
         );
     }
 }

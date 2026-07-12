@@ -10,7 +10,7 @@ use Illuminate\Support\Str;
 class ImageUploadController extends Controller
 {
     // Strict allowlist — no user-controlled path segments
-    private const ALLOWED_FOLDERS = ['board', 'branches', 'slides', 'uploads'];
+    private const ALLOWED_FOLDERS = ['board', 'branches', 'slides', 'uploads', 'yellow-pages'];
 
     public function upload(Request $request)
     {
@@ -25,10 +25,10 @@ class ImageUploadController extends Controller
         $file       = $request->file('image');
         $extension  = $file->extension();
         $filename   = Str::uuid() . '.' . $extension;
-        $path       = $file->storeAs("public/{$folder}", $filename);
+        $path       = $file->storeAs($folder, $filename, 'public');
 
         return response()->json([
-            'url' => '/storage/' . str_replace('public/', '', $path),
+            'url' => '/storage/' . $path,
         ]);
     }
 
@@ -57,10 +57,8 @@ class ImageUploadController extends Controller
             abort(403, 'Cannot delete files outside of managed folders.');
         }
 
-        $storagePath = 'public/' . $relativePath;
-
-        if (Storage::exists($storagePath)) {
-            Storage::delete($storagePath);
+        if (Storage::disk('public')->exists($relativePath)) {
+            Storage::disk('public')->delete($relativePath);
         }
 
         return response()->json(['ok' => true]);

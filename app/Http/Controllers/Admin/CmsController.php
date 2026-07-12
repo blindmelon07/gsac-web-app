@@ -201,6 +201,8 @@ class CmsController extends Controller
             'phone'       => 'nullable|string|max:50',
             'email'       => 'nullable|email|max:255',
             'description' => 'nullable|string|max:2000',
+            'photos'      => 'nullable|array|max:20',
+            'photos.*'    => 'string|max:500',
         ];
     }
     public function storeYellowPage(Request $r)  { YellowPageListing::create($r->validate($this->yellowPageRules())); return back()->with('success', 'Listing created.'); }

@@ -14,4 +14,5 @@ Route::middleware('throttle:60,1')->prefix('cms')->group(function () {
     Route::get('jobs',          [CmsController::class, 'jobs']);
     Route::get('loans',         [CmsController::class, 'loans']);
     Route::get('yellow-pages',  [CmsController::class, 'yellowPages']);
+    Route::get('yellow-pages/{listing}', [CmsController::class, 'yellowPage']);
 });
