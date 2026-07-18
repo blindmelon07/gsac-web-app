@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import t2 from '../../assets/t2.svg';
 import cover from '../../assets/cover.png';
 import gghi from '../../assets/gghi.svg';
@@ -123,9 +123,9 @@ const About = () => {
             <img src={icon} className='w-60' />
             <div>
               <p className='text-dark-text leading-loose p-4'>
-                Each circle symbolizes a fundamental pillar of GSACâ€”Credit, Allied, and Medical. These pillars embody our unwavering dedication to providing financial services, fostering collaboration across disciplines, and delivering exceptional medical care. Together, they form the bedrock of our organization, shaping our identity and driving our mission forward.
+                Each circle symbolizes a fundamental pillar of GSAC—Credit, Allied, and Medical. These pillars embody our unwavering dedication to providing financial services, fostering collaboration across disciplines, and delivering exceptional medical care. Together, they form the bedrock of our organization, shaping our identity and driving our mission forward.
                 <br /><br />
-                The outer strokes resemble huddling figures, conveys the essence of cooperation. It serves as a visual metaphor for the collective strength that emerges when like-minded individuals come together, working in unison to achieve GSACs goals. This stroke represents the very fabric of GSACâ€”an interconnected network of individuals united by a shared vision.
+                The outer strokes resemble huddling figures, conveys the essence of cooperation. It serves as a visual metaphor for the collective strength that emerges when like-minded individuals come together, working in unison to achieve GSACs goals. This stroke represents the very fabric of GSAC—an interconnected network of individuals united by a shared vision.
               </p>
             </div>
           </div>

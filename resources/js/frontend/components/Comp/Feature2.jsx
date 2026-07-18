@@ -1,4 +1,4 @@
-﻿import icon1 from '../../assets/icon1.svg'
+import icon1 from '../../assets/icon1.svg'
 import icon2 from '../../assets/icon2.svg'
 import icon3 from '../../assets/icon3.svg'
 import icon4 from '../../assets/icon4.svg'

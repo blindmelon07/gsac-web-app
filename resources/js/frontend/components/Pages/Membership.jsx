@@ -1,7 +1,8 @@
-﻿import { FcApproval } from "react-icons/fc";
+import { FcApproval } from "react-icons/fc";
 import { TbCircleNumber1, TbCircleNumber2, TbCircleNumber3, TbCircleNumber4, TbCircleNumber5 } from "react-icons/tb";
 import 'animate.css';
 import YouTube from 'react-youtube';
+import '../../index.css'; // Make sure to import the CSS file
 import { Link } from "react-router-dom";
 
 const Membership = () => {
@@ -72,7 +73,7 @@ const Membership = () => {
             <span className='text-xs lg:text-sm bg-white bg-opacity-30 px-2 py-[5px] rounded-md'>Featured</span>
             <h1 className='mt-4 text-2xl lg:text-3xl my-4'>Regular Membership</h1>
             <p className='text-sm'>
-              By becoming a GSAC member, you not only gain the benefits, rights and privileges of cooperative membership but also access to a valuable financial serviceâ€”savings, loans, insurance, etc. tailored to meet your specific needs and goals.
+              By becoming a GSAC member, you not only gain the benefits, rights and privileges of cooperative membership but also access to a valuable financial service—savings, loans, insurance, etc. tailored to meet your specific needs and goals.
             </p>
             <div className='flex text-sm mt-6 gap-2'>
               <FcApproval className='w-6 h-6 flex-shrink-0' />
@@ -119,9 +120,9 @@ const Membership = () => {
           <TbCircleNumber3 className='text-blue w-6 h-6 flex-shrink-0 my-2' />
           <h2 className='text-dark-blue font-semib my-4'>Submission</h2>
           <p>
-            â€¢ 1Ã—1 ID Picture (2) <br />
-            â€¢ Photocopy of any valid id such as: Voters ID, UMID, Pagibig, TIN, Brgy. ID <br />
-            â€¢ Certificate for PMES or your attendance, or of module
+            • 1×1 ID Picture (2) <br />
+            • Photocopy of any valid id such as: Voters ID, UMID, Pagibig, TIN, Brgy. ID <br />
+            • Certificate for PMES or your attendance, or of module
           </p>
         </div>
         <div className='lg:w-1/5 flex flex-col items-center'>
@@ -136,8 +137,8 @@ const Membership = () => {
           <TbCircleNumber5 className='text-blue w-6 h-6 flex-shrink-0 my-2' />
           <h2 className='text-dark-blue font-semib my-4'>Submission</h2>
           <p>
-            â€¢ Partial Payment: Php 2,200 <br />
-            â€¢ Full Payment: Php 5,200<br /><br />
+            • Partial Payment: Php 2,200 <br />
+            • Full Payment: Php 5,200<br /><br />
             It is required to full pay the Php 4,000 capital within 2 years. Passbook for savings and loan account will be given to new registered Regular members.
           </p>
         </div>

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 
 @import 'tailwindcss';
@@ -9,9 +10,9 @@
 @source './App.jsx';
 
 @theme {
-  --font-family-semib: 'LotaSemibold', sans-serif;
+  --font-semib: 'LotaSemibold', sans-serif;
   --font-family-normal: 'LotaRegular', sans-serif;
-  --font-family-headline: 'Ivy', serif;
+  --font-headline: 'Ivy', serif;
 
   --color-dark-text: #4D5875;
   --color-gray-text: #94979C;
@@ -27,6 +28,15 @@
   --shadow-3xl: -6px -2px 25px -2px rgba(110,137,158,0.35);
   --shadow-light: 7px 12px 26px -1px rgba(201,212,224,0.39);
   --shadow-2xl-custom: 0 25px 50px -12px rgb(125 151 183 / 45%);
+}
+
+
+.font-caveat {
+  font-family: 'Caveat';
+}
+
+.font-jua {
+  font-family: 'Jua', sans-serif;
 }
 
 @font-face {
@@ -48,34 +58,27 @@
   font-family: 'LotaRegular';
 }
 
-.font-caveat {
-  font-family: 'Caveat';
-}
-
-.font-jua {
-  font-family: 'Jua', sans-serif;
-}
 
 .slide1 {
-  background-image: url('./assets/cover.png');
+  background-image: url('assets/cover.png');
   background-size: cover;
   background-position: center;
 }
 
 .feature3 {
-  background-image: url('./assets/ft3.jpg');
+  background-image: url('assets/ft3.jpg');
   background-size: cover;
   background-position: center;
 }
 
 .slide2 {
-  background-image: url('./assets/gcash.png');
+  background-image: url('assets/gcash.png');
   background-size: cover;
   background-position: center;
 }
 
 .slide3 {
-  background-image: url('./assets/f3.jpg');
+  background-image: url('assets/f3.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -85,9 +88,8 @@ span.ripple {
   border-radius: 50%;
   transform: scale(0);
   animation: ripple 600ms linear;
-  background-color: #F6D365;
+  background-color: #b6d8ff;
 }
-
 @keyframes ripple {
   to {
     transform: scale(4);
@@ -96,32 +98,33 @@ span.ripple {
 }
 
 .icon-shadow {
-  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.4)); /* Adjust the shadow values as needed */
 }
 
 .glassed {
   background: rgba(230, 224, 224, 0.1);
   backdrop-filter: blur(5px);
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Optional: Add border for contrast */
   padding: 20px;
 }
 
 .carousel-wrapper {
-  height: 600px;
+  height: 600px; /* Adjust height of the carousel wrapper */
 }
 
 .carousel-wrapper .carousel {
-  height: 100%;
+  height: 100%; /* Ensure the carousel fills its container */
 }
 
 .carousel-image {
-  object-fit: cover;
+  object-fit: cover; /* Ensure the image covers its container */
 }
 
+/* src/App.css */
 .video-responsive {
   position: relative;
-  padding-bottom: 56.25%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
   height: 100%;
   overflow: hidden;
   max-width: 100%;
@@ -140,7 +143,7 @@ span.ripple {
 .carousel-container {
   position: relative;
   width: 100%;
-  max-width: 600px;
+  max-width: 600px; /* Adjust carousel width as needed */
   margin: 0 auto;
   overflow: hidden;
   border-radius: 8px;
@@ -153,7 +156,7 @@ span.ripple {
 }
 
 .carousel-slide {
-  flex: 0 0 100%;
+  flex: 0 0 100%; /* Full width for each slide */
   overflow: hidden;
 }
 
@@ -187,3 +190,6 @@ span.ripple {
 .carousel-button.next {
   right: 10px;
 }
+
+
+

@@ -1,25 +1,15 @@
-import { useEffect, useState } from 'react';
 import YouTube from 'react-youtube';
+import loan from '../Comp/Loans.js';
 import advisory from '../../assets/advisory.svg';
+import '../../index.css'; // Make sure to import the CSS file
 
 const Loans = () => {
-  const [loans, setLoans] = useState([]);
   const videoId = 'ny8UPS-Big8';
-  const opts = { playerVars: { autoplay: 0 } };
-
-  useEffect(() => {
-    fetch('/api/cms/loans')
-      .then(r => r.json())
-      .then(setLoans)
-      .catch(() => {});
-  }, []);
-
-  // Group loans into rows of 2
-  const rows = loans.reduce((acc, loan, i) => {
-    if (i % 2 === 0) acc.push([]);
-    acc[acc.length - 1].push(loan);
-    return acc;
-  }, []);
+  const opts = {
+    playerVars: {
+      autoplay: 0,
+    },
+  };
 
   return (
     <div className='mx-6 lg:mx-32 my-10 bg-[#F3FAFF] rounded-xl p-10 lg:p-20'>
@@ -47,17 +37,21 @@ const Loans = () => {
       </div>
 
       <div className='flex flex-col mt-10 gap-6'>
-        {rows.map((row, i) => (
-          <div key={i} className='flex flex-col sm:flex-row gap-6'>
-            {row.map(loan => (
-              <div key={loan.id} className='bg-white w-full sm:w-1/2 rounded-xl p-6 sm:p-8'>
-                <h1 className='text-dark-blue text-xl'>{loan.name}</h1>
-                {loan.description && <p className='text-sm text-dark-text my-2 whitespace-pre-line'>{loan.description}</p>}
-                {loan.interest && <p className='text-sm text-dark-text my-2'>Interest: {loan.interest}</p>}
-                {loan.term && <p className='text-sm text-dark-text my-2'>Term: {loan.term}</p>}
-                {loan.payment && <p className='text-sm text-dark-text my-2'>Mode of Payment: {loan.payment}</p>}
-              </div>
-            ))}
+        {loan.reduce((rows, loan, index) => {
+          if (index % 4 === 0) rows.push([]);
+          rows[rows.length - 1].push(
+            <div key={index} className='bg-white w-full sm:w-1/2 rounded-xl p-6 sm:p-12'>
+              <h1 className='text-dark-blue text-xl'>{loan.name}</h1>
+              {loan.desc && <p className='text-sm text-dark-text my-2 whitespace-pre-line'>{loan.desc}</p>}
+              {loan.interest && <p className='text-sm text-dark-text my-2'>Interest: {loan.interest}</p>}
+              {loan.term && <p className='text-sm text-dark-text my-2'>Term: {loan.term}</p>}
+              {loan.payment && <p className='text-sm text-dark-text my-2'>Mode of Payment: {loan.payment}</p>}
+            </div>
+          );
+          return rows;
+        }, []).map((row, index) => (
+          <div key={index} className='flex flex-col sm:flex-row gap-6'>
+            {row}
           </div>
         ))}
       </div>

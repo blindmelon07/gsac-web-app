@@ -1,4 +1,4 @@
-﻿import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import fb from '../../assets/fb.svg';
 import youtube from '../../assets/youtube.svg';
 
@@ -60,7 +60,7 @@ const Footer = () => {
 
         </div>
         
-        <p>Copyright Â© 2024 Gubat Saint Anthony Cooperative â€¢ All Rights Reserved</p>
+        <p>Copyright © 2024 Gubat Saint Anthony Cooperative • All Rights Reserved</p>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-﻿import hero from '../../assets/hero.mp4';
+import hero from '../../assets/hero.mp4';
 import cover from '../../assets/cover.jpg'; // Path to your thumbnail image
 import { DefaultPlayer as Video } from 'react-html5video';
 import 'react-html5video/dist/styles.css';

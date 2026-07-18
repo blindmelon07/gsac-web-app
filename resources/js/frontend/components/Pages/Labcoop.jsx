@@ -1,4 +1,4 @@
-﻿import lchero from '../../assets/lc-hero.png'
+import lchero from '../../assets/lc-hero.png'
 import { Link } from 'react-router-dom'
 import af1 from '../../assets/af1.png'
 import af2 from '../../assets/af2.png'

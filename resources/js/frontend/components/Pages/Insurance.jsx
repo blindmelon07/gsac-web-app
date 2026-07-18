@@ -1,4 +1,4 @@
-﻿import { IoIosCheckbox } from "react-icons/io";
+import { IoIosCheckbox } from "react-icons/io";
 import climbs from '../../assets/climbs-logo.jpg';
 import i1 from '../../assets/i1.svg';
 import i2 from '../../assets/i2.svg';

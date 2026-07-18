@@ -1,5 +1,6 @@
-﻿import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
+import '../../index.css'
 
 const Carousel = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);

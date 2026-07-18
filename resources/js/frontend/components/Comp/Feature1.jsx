@@ -1,4 +1,4 @@
-﻿import f1 from '../../assets/f1.jpg'
+import f1 from '../../assets/f1.jpg'
 
 const Feature1 = () => {
   return (
@@ -14,7 +14,7 @@ const Feature1 = () => {
             <span className='text-dark font-semib'>SME Loan</span>
             <span className='text-xs lg:text-sm text-dark-blue'>30% interest PA</span>
           </div>
-          <p className='text-gray-text text-xs lg:text-sm my-2'>Designed to provide financial support for a memberâ€™s business venture.</p>
+          <p className='text-gray-text text-xs lg:text-sm my-2'>Designed to provide financial support for a member’s business venture.</p>
         </div>
         
         <img src={f1} className='rounded-xl justify-center lg:w-4/6' />
@@ -25,7 +25,7 @@ const Feature1 = () => {
             <span className='text-dark font-semib'>ASA Loan</span>
             <span className='text-xs lg:text-sm text-dark-blue'>30% interest PA</span>
           </div>
-          <p className='text-gray-text text-xs lg:text-sm my-2'>Designed to provide financial support for a memberâ€™s business venture.</p>
+          <p className='text-gray-text text-xs lg:text-sm my-2'>Designed to provide financial support for a member’s business venture.</p>
         </div>
 
       </div>

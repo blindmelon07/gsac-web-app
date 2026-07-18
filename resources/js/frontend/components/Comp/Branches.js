@@ -1,4 +1,4 @@
-﻿import br1 from '../../assets/br1.jpg'
+import br1 from '../../assets/br1.jpg'
 import br2 from '../../assets/br2.jpg'
 import br3 from '../../assets/br3.jpg'
 import br4 from '../../assets/br4.jpg'
@@ -28,7 +28,7 @@ const branch = [
   {
     img: br1,
     name:'Main Branch',
-    address:'Corner Luna and Quezon St. Gubat, Sorsogonâ€‹â€‹â€‹â€‹â€‹',
+    address:'Corner Luna and Quezon St. Gubat, Sorsogon​​​​​',
     bm:'Stella F. Hubilla',
     email: 'gubat@gsac.coop',
     contact:'0916 4586 648'
@@ -36,7 +36,7 @@ const branch = [
   {
     img: br2,
     name:'Sorsogon Branch',
-    address:'Garcia St. Brgy Sulucan, Sorsogon Cityâ€‹â€‹',
+    address:'Garcia St. Brgy Sulucan, Sorsogon City​​',
     bm:'Novalyn C. Enconado',
     email: 'sorsogon@gsac.coop',
     contact:'0927 9427 670'
@@ -44,7 +44,7 @@ const branch = [
   {
     img: br3,
     name:'Bulan Branch',
-    address:'Cor. Roque and Gerona Sts., Zone 3, Bulan, Sorsogonâ€‹â€‹',
+    address:'Cor. Roque and Gerona Sts., Zone 3, Bulan, Sorsogon​​',
     bm:'Thea Estrellado',
     email: 'bulan@gsac.coop',
     contact:'0975 3481 375'
@@ -52,7 +52,7 @@ const branch = [
   {
     img: br4,
     name:'Irosin Branch',
-    address:'CM Recto St, Irosin, Sorsogonâ€‹',
+    address:'CM Recto St, Irosin, Sorsogon​',
     bm:'Ray Gotis',
     email: 'irosin@gsac.coop',
     contact:'+63(917) 118 4202'
@@ -60,7 +60,7 @@ const branch = [
   {
     img: br5,
     name:'Legazpi Branch',
-    address:'Purok 1, Brgy. 3 EMs Bo. East, Legazpi City, Albayâ€‹â€‹â€‹â€‹â€‹â€‹',
+    address:'Purok 1, Brgy. 3 EMs Bo. East, Legazpi City, Albay​​​​​​',
     bm:'Percival C. Balbueno',
     email: 'legazpi@gsac.coop',
     contact:'0970 8357 513'
@@ -68,7 +68,7 @@ const branch = [
   {
     img: br6,
     name:'Tabaco Branch',
-    address:'Brgy. Panal Tabaco Cityâ€‹â€‹â€‹â€‹â€‹â€‹',
+    address:'Brgy. Panal Tabaco City​​​​​​',
     bm:'Reymond Dicen',
     email: 'tabaco@gsac.coop',
     contact:'+63(993) 057 4270'
@@ -76,7 +76,7 @@ const branch = [
   {
     img: br7,
     name:'Ligao Branch',
-    address:'McKinley Street, Brgy. Bagum Bayan, Ligao Cityâ€‹â€‹â€‹â€‹â€‹â€‹â€‹',
+    address:'McKinley Street, Brgy. Bagum Bayan, Ligao City​​​​​​​',
     bm:'Lerma E. Figueras',
     email: 'ligao@gsac.coop',
     contact:'0910 5689 422'
@@ -84,7 +84,7 @@ const branch = [
   {
     img: br8,
     name:'Naga Branch',
-    address:'Unit 4 ANR Building, Concepcion Grade, Naga Cityâ€‹â€‹',
+    address:'Unit 4 ANR Building, Concepcion Grade, Naga City​​',
     bm:'Roel Briones',
     email: 'naga@gsac.coop',
     contact:'0998 1942 914'
@@ -92,7 +92,7 @@ const branch = [
   {
     img: br9,
     name:'Catarman Branch',
-    address:'F. Marcos St. Brgy. Lapu-Lapu, Catarman N. Samarâ€‹',
+    address:'F. Marcos St. Brgy. Lapu-Lapu, Catarman N. Samar​',
     bm:'Daniel Estargo',
     email: 'catarman@gsac.coop',
     contact:'0975 9848 513'
@@ -100,24 +100,24 @@ const branch = [
   {
     img: br10,
     name:'Pilar Branch',
-    address:'Smith Street, Banuyo, Pilar Sorsogonâ€‹â€‹â€‹â€‹',
-    bm:'Ruling Jamisolaâ€‹',
+    address:'Smith Street, Banuyo, Pilar Sorsogon​​​​',
+    bm:'Ruling Jamisola​',
     email: 'pilar@gsac.coop',
     contact:'0912 9600 952'
   },
   {
     img: br11,
     name:'Magallanes Branch',
-    address:'Corner Buitizon & Ortega Streets, Brgy Central, Magallanesâ€‹â€‹â€‹â€‹',
-    bm:'Dante Deinlaâ€‹',
+    address:'Corner Buitizon & Ortega Streets, Brgy Central, Magallanes​​​​',
+    bm:'Dante Deinla​',
     email: 'magallanes@gsac.coop',
     contact:'0951 5994 328'
   },
   {
     img: br12,
     name:'Bulusan Branch',
-    address:'V. Guysayko St., Brgy. Central, Bulusanâ€‹',
-    bm:'Aries E. Flestadoâ€‹',
+    address:'V. Guysayko St., Brgy. Central, Bulusan​',
+    bm:'Aries E. Flestado​',
     email: 'bulusan@gsac.coop',
     contact:'0985 1050 973 / 0951 5998 227'
   },
@@ -125,47 +125,47 @@ const branch = [
     img: br13,
     name:'Donsol Branch',
     address:'347 J.Toledo St. Corner Clemente, Punta Waling-Waling Dalisay, Donsol',
-    bm:'Jose L. Esperanzateâ€‹',
+    bm:'Jose L. Esperanzate​',
     email: 'donsol@gsac.coop',
     contact:'0952 5578 483'
   },
   {
     img: br14,
     name:'Allen Branch',
-    address:'Corner No. 75 Magallanes Street, Brgy. Kinabranan, Allenâ€‹',
-    bm:'Michael Antuerpiaâ€‹â€‹â€‹',
+    address:'Corner No. 75 Magallanes Street, Brgy. Kinabranan, Allen​',
+    bm:'Michael Antuerpia​​​',
     email: 'allen@gsac.coop',
     contact:'0931 7155 689'
   },
   {
     img: br15,
     name:'Castilla Branch',
-    address:'Maharlika Highway, Cumadcad, Castillaâ€‹',
-    bm:'Roldan Balbuenaâ€‹',
+    address:'Maharlika Highway, Cumadcad, Castilla​',
+    bm:'Roldan Balbuena​',
     email: 'castilla@gsac.coop',
     contact:'0950 9281 397'
   },
   {
     img: br16,
     name:'Juban Branch',
-    address:'South Poblacion, Juban, Sorsogonâ€‹',
-    bm:'Roldan Balbuenaâ€‹',
+    address:'South Poblacion, Juban, Sorsogon​',
+    bm:'Roldan Balbuena​',
     email: 'juban@gsac.coop',
     contact:'0953 9229 347'
   },
   {
     img: br17,
     name:'Iriga Branch',
-    address:'229 Iriga - Baao Rd, Iriga City, Camarines Surâ€‹',
-    bm:'Darwin Perolâ€‹',
+    address:'229 Iriga - Baao Rd, Iriga City, Camarines Sur​',
+    bm:'Darwin Perol​',
     email: 'iriga@gsac.coop',
     contact:'0970 5801 212'
   },
   {
     img: br18,
     name:'Bacacay Branch',
-    address:'BaÃ±ez St., Barangay 10, Bacacay, Albayâ€‹',
-    bm:'Richard Jerusalemâ€‹',
+    address:'Bañez St., Barangay 10, Bacacay, Albay​',
+    bm:'Richard Jerusalem​',
     email: 'bacacay@gsac.coop',
     contact:'0950 9299 337'
   },
