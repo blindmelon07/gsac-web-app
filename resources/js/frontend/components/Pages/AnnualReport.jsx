@@ -5,12 +5,25 @@ const AnnualReport = () => {
       
       
         
-        <div className='text-center bg-blue bg-opacity-10 p-8 rounded-2xl mt-10 mb-40'>
-          <h2 className='text-3xl mb-4 text-dark-blue'>61st GA Souvenir Program</h2>
-          <a 
-            href="/61ST GA SOUVENIR PROGRAM.pdf" 
-            download="61ST_GA_SOUVENIR_PROGRAM.pdf"
+        <div className='text-center bg-blue bg-opacity-10 p-8 rounded-2xl mt-10 mb-10'>
+          <h2 className='text-3xl mb-4 text-dark-blue'>62nd GA Souvenir Program</h2>
+          <a
+            href="/GSAC 62nd GA Souvenir Program.pdf"
+            download="GSAC_62nd_GA_Souvenir_Program.pdf"
             className='bg-blue text-white px-6 py-2 rounded-md hover:bg-dark-blue'
+          >
+            Download Now
+          </a>
+
+
+        </div>
+
+        <div className='text-center bg-blue bg-opacity-5 p-8 rounded-2xl mb-40'>
+          <h2 className='text-3xl mb-4 text-dark-blue'>61st GA Souvenir Program</h2>
+          <a
+            href="/61ST GA SOUVENIR PROGRAM.pdf"
+            download="61ST_GA_SOUVENIR_PROGRAM.pdf"
+            className='bg-blue bg-opacity-60 text-white px-6 py-2 rounded-md hover:bg-dark-blue'
           >
             Download Now
           </a>

@@ -20,7 +20,7 @@ import et1 from '../../assets/et1.jpeg'
 import et2 from '../../assets/et2.jpeg'
 import et3 from '../../assets/et3.png'
 import k1 from '../../assets/k1.jpeg'
-import k2 from '../../assets/k2.jpg'
+import k2 from '../../assets/k2.png'
 import k3 from '../../assets/k3.jpeg'
 
 
@@ -154,8 +154,8 @@ const keypersons = [
   },
   {
     img: k2,
-    name:'Atty. Bienvenido Larosa',
-    position: 'OIC-CEO'
+    name:'Erwin E. Farenas',
+    position: 'Chief Executive Officer'
   },
   {
     img: k3,

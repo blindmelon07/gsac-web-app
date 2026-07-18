@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 
 const FAQ = () => {
-  const faqs = [
+  const [apiFaqs, setApiFaqs] = useState(null);
+
+  const staticFaqs = [
     {
       question: "Who can be members of a cooperative?",
       answer: "Member should be at least 18 years old with visible means of income"
@@ -112,6 +114,8 @@ const FAQ = () => {
     },
   ];
 
+  const faqs = apiFaqs || staticFaqs;
+
   const [activeQuestion, setActiveQuestion] = useState(null);
 
   const toggleAccordion = (question) => {
@@ -119,6 +123,10 @@ const FAQ = () => {
   };
 
   useEffect(() => {
+    fetch('/api/cms/faqs')
+      .then(r => r.json())
+      .then(data => { if (data.length > 0) setApiFaqs(data); })
+      .catch(() => {});
 
     setActiveQuestion(null);
   }, []);

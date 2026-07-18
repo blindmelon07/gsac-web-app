@@ -1,9 +1,23 @@
+import { useState, useEffect } from 'react';
 import YouTube from 'react-youtube';
-import loan from '../Comp/Loans.js';
+import staticLoan from '../Comp/Loans.js';
 import advisory from '../../assets/advisory.svg';
 import '../../index.css'; // Make sure to import the CSS file
 
 const Loans = () => {
+  const [apiLoans, setApiLoans] = useState(null);
+
+  useEffect(() => {
+    fetch('/api/cms/loans')
+      .then(r => r.json())
+      .then(data => { if (data.length > 0) setApiLoans(data); })
+      .catch(() => {});
+  }, []);
+
+  const loan = apiLoans
+    ? apiLoans.map(l => ({ name: l.name, desc: l.description, interest: l.interest, term: l.term, payment: l.payment }))
+    : staticLoan;
+
   const videoId = 'ny8UPS-Big8';
   const opts = {
     playerVars: {
@@ -40,7 +54,7 @@ const Loans = () => {
         {loan.reduce((rows, loan, index) => {
           if (index % 4 === 0) rows.push([]);
           rows[rows.length - 1].push(
-            <div key={index} className='bg-white w-full sm:w-1/2 rounded-xl p-6 sm:p-12'>
+            <div key={index} className='bg-white w-full sm:w-1/2 rounded-xl p-6 sm:p-8'>
               <h1 className='text-dark-blue text-xl'>{loan.name}</h1>
               {loan.desc && <p className='text-sm text-dark-text my-2 whitespace-pre-line'>{loan.desc}</p>}
               {loan.interest && <p className='text-sm text-dark-text my-2'>Interest: {loan.interest}</p>}

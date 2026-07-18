@@ -117,7 +117,7 @@ const Savings = () => {
       </div>
 
       <div className='flex flex-col lg:flex-row gap-6 mt-4 lg:mt-16'>
-        <div className='bg-white rounded-xl p-10 lg:w-2/6'>
+        <div className='bg-white rounded-xl p-6 lg:flex-1'>
           <p className='text-2xl text-dark-blue'>Time Deposit</p>
           <p className='text-sm text-steel my-4'>Time Deposits are another important source of funds for operations. People with excess funds that will not be used over a considerable period of time want to minimize the erosion of the value of their savings brought about by inflation.</p>
           <button onClick={openModal} className='text-blue text-sm my-2'>See rates 🡥</button>
@@ -233,17 +233,17 @@ const Savings = () => {
           </div>
         </div>
       ) : null}
-        <div className='flex flex-col gap-6'>
-          <div className='bg-white rounded-xl p-10'>
+        <div className='flex flex-col gap-6 lg:flex-1'>
+          <div className='bg-white rounded-xl p-6'>
             <p className='text-2xl text-dark-blue'>Damayan II</p>
             <p className='text-sm text-steel my-4'>Damayan is an institutionalized “abuluyan” system in the organization to serve the members from “womb to tomb”</p>
           </div>
-          <div className='bg-white rounded-xl p-10'>
+          <div className='bg-white rounded-xl p-6'>
             <p className='text-2xl text-dark-blue'>Education</p>
             <p className='text-sm text-steel my-4'>Savings account purposely for education.</p>
           </div>
         </div>
-        <div className='bg-white rounded-xl p-10'>
+        <div className='bg-white rounded-xl p-6 lg:flex-1'>
           <p className='text-2xl text-dark-blue'>Aflatoun</p>
           <p className='text-sm text-steel my-4 mb-8'>A social and financial education for children ages 3-17 years old. It started in GSAC last November 2011 through the NATCCO (National Confederation of Cooperatives) and in partnership with the Department of Education (DepEd) <br/><br/>
 
