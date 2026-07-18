@@ -60,25 +60,25 @@
 
 
 .slide1 {
-  background-image: url('assets/cover.png');
+  background-image: url('./assets/cover.png');
   background-size: cover;
   background-position: center;
 }
 
 .feature3 {
-  background-image: url('assets/ft3.jpg');
+  background-image: url('./assets/ft3.jpg');
   background-size: cover;
   background-position: center;
 }
 
 .slide2 {
-  background-image: url('assets/gcash.png');
+  background-image: url('./assets/gcash.png');
   background-size: cover;
   background-position: center;
 }
 
 .slide3 {
-  background-image: url('assets/f3.jpg');
+  background-image: url('./assets/f3.jpg');
   background-size: cover;
   background-position: center;
 }
