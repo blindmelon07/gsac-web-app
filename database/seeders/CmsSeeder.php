@@ -25,7 +25,7 @@ class CmsSeeder extends Seeder
         if (HomeStat::count() === 0) {
             HomeStat::insert([
                 ['value' => '71k', 'label' => 'Members',  'link' => '/savings',   'order' => 1, 'created_at' => now(), 'updated_at' => now()],
-                ['value' => '6.8b','label' => 'Asset',    'link' => '/loans',     'order' => 2, 'created_at' => now(), 'updated_at' => now()],
+                ['value' => '6.8b', 'label' => 'Asset',    'link' => '/loans',     'order' => 2, 'created_at' => now(), 'updated_at' => now()],
                 ['value' => '18',  'label' => 'Branches', 'link' => '/branches',  'order' => 3, 'created_at' => now(), 'updated_at' => now()],
             ]);
         }
@@ -56,7 +56,17 @@ Bronze  – maximum of PHP 3,000.00', 'interest' => null, 'term' => null, 'payme
                 ['name' => 'ATM Salary Loan', 'description' => 'A loan product is offered to government and private employees receiving their salaries through their ATM. Applicant must hold a PERMANENT job status and must be at least in service for a minimum of 1 year. Once the loan is approved, the member’s ATM will be surrendered and will be automatically returned to the member once the loan account is settled.', 'interest' => '13% p.a.', 'term' => 'Max. of 36 months or 60 months for buy out', 'payment' => 'Monthly', 'order' => 4, 'is_active' => true, 'created_at' => now(), 'updated_at' => now()],
                 ['name' => 'Automatic Payroll Deduction System (APDS)', 'description' => 'This is a salary loan product for DepEd Teaching and Non-Teaching Personnel. Since it is automatically deducted on the payroll system of Deped, surrendering of ATM is no longer needed. Applicants should be more than 1 year in service and have a PERMANENT job status.', 'interest' => '7.5% p.a.', 'term' => 'Max. of 36 months', 'payment' => 'Monthly', 'order' => 5, 'is_active' => true, 'created_at' => now(), 'updated_at' => now()],
                 ['name' => 'Outreach Loan', 'description' => 'A loan product intended for the barangay officials receiving a regular monthly honorarium. No collateral is needed for this loan but a signed MOA, Resolution, and Promissory Note signed by all council members are submitted to GSAC.', 'interest' => '14% p.a.', 'term' => 'Max. of 24 months (Loan must be paid before end of term)', 'payment' => 'Monthly', 'order' => 6, 'is_active' => true, 'created_at' => now(), 'updated_at' => now()],
-                ['name' => 'Car Loan', 'description' => 'A loan product to finance the purchase of brand new and second-hand vehicles for qualified members. Loan amount is selling price less cash out borne by the member. Any cash discount granted by the car dealer will be deducted from the selling price in favor of the member-borrower.', 'interest' => '6.7% p.a.', 'term' => null, 'payment' => 'Monthly', 'order' => 7, 'is_active' => true, 'created_at' => now(), 'updated_at' => now()],
+                [
+                    'name' => 'Car Loan',
+                    'description' => 'A loan product to finance the purchase of brand-new and second-hand vehicles for qualified members. The loan amount is the selling price less the cash-out borne by the member. Any cash discount granted by the car dealer will be deducted from the selling price in favor of the member-borrower. Requirements: Signed special car loan form with 2 member references, proof of income, and complete details of the desired vehicle. Comprehensive insurance must be availed from CLIMBS.',
+                    'interest' => '12% per annum',
+                    'term' => 'Up to 60 months maximum (brand-new cars only)',
+                    'payment' => 'Monthly',
+                    'order' => 7,
+                    'is_active' => true,
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ],
                 ['name' => 'Appliance Loan', 'description' => 'A loan to finance the purchase of appliances, gadgets, and construction materials. The amount of the loan shall be based on the credit limit and capacity to pay of member. A 25% down payment is required.', 'interest' => '21% p.a.', 'term' => '36 months', 'payment' => 'Monthly', 'order' => 8, 'is_active' => true, 'created_at' => now(), 'updated_at' => now()],
                 ['name' => 'Pension Loan', 'description' => 'This is a loan product intended for those who are already receiving monthly pension thru ATM. Once the loan is approved, the ATM where the pension is received will be surrendered on the duration of the loan and will be released when the loan is fully paid.', 'interest' => '16 p.a.', 'term' => '36 months (May depend on age of member)', 'payment' => 'Monthly', 'order' => 9, 'is_active' => true, 'created_at' => now(), 'updated_at' => now()],
                 ['name' => 'Commercial Loan', 'description' => 'This loan type requires a titled property to be offered as collateral in exchange for a substantial loan amount. It’s available to all members who have fulfilled the necessary share capital requirement. The property could be residential, commercial, or agricultural, and it should fall within the operational area of the branch. Members are responsible for handling the documentation process with the Register of Deeds (ROD) and Bureau of Internal Revenue (BIR).', 'interest' => '12 p.a.', 'term' => 'Max. of 120 months', 'payment' => 'Monthly', 'order' => 10, 'is_active' => true, 'created_at' => now(), 'updated_at' => now()],
