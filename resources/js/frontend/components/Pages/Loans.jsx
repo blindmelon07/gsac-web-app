@@ -1,22 +1,21 @@
 import { useState, useEffect } from 'react';
 import YouTube from 'react-youtube';
-import staticLoan from '../Comp/Loans.js';
 import advisory from '../../assets/advisory.svg';
 import '../../index.css'; // Make sure to import the CSS file
 
 const Loans = () => {
-  const [apiLoans, setApiLoans] = useState(null);
+  const [loan, setLoan] = useState([]);
+  const [status, setStatus] = useState('loading'); // loading | ready | error
 
   useEffect(() => {
     fetch('/api/cms/loans')
-      .then(r => r.json())
-      .then(data => { if (data.length > 0) setApiLoans(data); })
-      .catch(() => {});
+      .then(r => { if (!r.ok) throw new Error(r.statusText); return r.json(); })
+      .then(data => {
+        setLoan(data.map(l => ({ name: l.name, desc: l.description, interest: l.interest, term: l.term, payment: l.payment })));
+        setStatus('ready');
+      })
+      .catch(() => setStatus('error'));
   }, []);
-
-  const loan = apiLoans
-    ? apiLoans.map(l => ({ name: l.name, desc: l.description, interest: l.interest, term: l.term, payment: l.payment }))
-    : staticLoan;
 
   const videoId = 'ny8UPS-Big8';
   const opts = {
@@ -49,6 +48,16 @@ const Loans = () => {
           <img src={advisory} alt='advisory' className='w-full' />
         </div>
       </div>
+
+      {status === 'loading' && (
+        <p className='text-center text-sm text-steel mt-10'>Loading loan products…</p>
+      )}
+      {status === 'error' && (
+        <p className='text-center text-sm text-steel mt-10'>We couldn&apos;t load our loan products right now. Please try again later.</p>
+      )}
+      {status === 'ready' && loan.length === 0 && (
+        <p className='text-center text-sm text-steel mt-10'>No loan products are available at the moment.</p>
+      )}
 
       <div className='flex flex-col mt-10 gap-6'>
         {loan.reduce((rows, loan, index) => {

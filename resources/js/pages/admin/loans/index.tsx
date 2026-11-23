@@ -2,7 +2,7 @@ import { Head, useForm, router } from '@inertiajs/react';
 import { useState } from 'react';
 import { Pencil, Trash2, Plus, X } from 'lucide-react';
 
-interface Loan { id: number; name: string; description: string; interest: string; term: string; payment: string; order: number; is_active: boolean; }
+interface Loan { id: number; name: string; description: string; interest: string | null; term: string | null; payment: string | null; order: number; is_active: boolean; }
 const empty = { name: '', description: '', interest: '', term: '', payment: '', order: 0, is_active: true };
 
 export default function LoansIndex({ loans }: { loans: Loan[] }) {
@@ -11,7 +11,7 @@ export default function LoansIndex({ loans }: { loans: Loan[] }) {
     const { data, setData, post, put, processing, reset } = useForm(empty as any);
 
     function openCreate() { reset(); setEditing(null); setOpen(true); }
-    function openEdit(l: Loan) { setEditing(l); setData({ name: l.name, description: l.description, interest: l.interest, term: l.term, payment: l.payment, order: l.order, is_active: l.is_active } as any); setOpen(true); }
+    function openEdit(l: Loan) { setEditing(l); setData({ name: l.name, description: l.description, interest: l.interest ?? '', term: l.term ?? '', payment: l.payment ?? '', order: l.order, is_active: l.is_active } as any); setOpen(true); }
     function submit(e: React.FormEvent) {
         e.preventDefault();
         if (editing) put(`/admin/loans/${editing.id}`, { onSuccess: () => setOpen(false) });
@@ -54,7 +54,7 @@ export default function LoansIndex({ loans }: { loans: Loan[] }) {
                     <div className="bg-background rounded-xl shadow-xl w-full max-w-lg p-6 max-h-[90vh] overflow-y-auto">
                         <div className="flex items-center justify-between mb-4"><h2 className="text-lg font-semibold">{editing ? 'Edit' : 'New'} Loan Product</h2><button onClick={() => setOpen(false)}><X className="w-5 h-5" /></button></div>
                         <form onSubmit={submit} className="flex flex-col gap-3">
-                            {[['name','Product Name',true],['interest','Interest Rate (e.g. 21% p.a.)',true],['term','Term (e.g. Max. of 36 months)',true],['payment','Payment Schedule (e.g. Monthly)',true]].map(([f,l,req]) => (
+                            {[['name','Product Name',true],['interest','Interest Rate (e.g. 21% p.a.)',false],['term','Term (e.g. Max. of 36 months)',false],['payment','Payment Schedule (e.g. Monthly)',false]].map(([f,l,req]) => (
                                 <div key={f as string}><label className="block text-sm font-medium mb-1">{l as string}</label><input required={!!req} value={(data as any)[f as string]} onChange={e => setData(f as any, e.target.value)} className="w-full border border-border rounded-lg px-3 py-2 text-sm bg-background focus:outline-none focus:ring-2 focus:ring-primary" /></div>
                             ))}
                             <div><label className="block text-sm font-medium mb-1">Description *</label><textarea required rows={4} value={(data as any).description} onChange={e => setData('description' as any, e.target.value)} className="w-full border border-border rounded-lg px-3 py-2 text-sm bg-background focus:outline-none focus:ring-2 focus:ring-primary resize-none" /></div>

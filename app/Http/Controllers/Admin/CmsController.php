@@ -178,9 +178,9 @@ class CmsController extends Controller
         return [
             'name'        => 'required|string|max:255',
             'description' => 'required|string|max:5000',
-            'interest'    => 'required|string|max:100',
-            'term'        => 'required|string|max:100',
-            'payment'     => 'required|string|max:100',
+            'interest'    => 'nullable|string|max:100',
+            'term'        => 'nullable|string|max:100',
+            'payment'     => 'nullable|string|max:100',
             'order'       => 'integer|min:0|max:999',
             'is_active'   => 'boolean',
         ];
